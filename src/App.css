@@ -1,0 +1,44 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+
+.navbar {
+  background: #2d6a4f;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar a { color: white; margin-left: 20px; text-decoration: none; font-weight: bold; }
+
+.landing {
+  background-image: url('https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=1600');
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: 2px 2px 4px black;
+}
+.landing button {
+  padding: 15px 40px; font-size: 18px; background: #2d6a4f;
+  color: white; border: none; cursor: pointer; margin-top: 20px; border-radius: 8px;
+}
+
+.category { padding: 30px; }
+.category h2 { color: #2d6a4f; margin-bottom: 20px; }
+.plants-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+.plant-card { border: 1px solid #ddd; padding: 15px; border-radius: 10px; text-align: center; }
+.plant-card img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; }
+.plant-card button {
+  margin-top: 10px; padding: 10px 20px; background: #2d6a4f;
+  color: white; border: none; border-radius: 6px; cursor: pointer;
+}
+.plant-card button:disabled { background: gray; cursor: not-allowed; }
+
+.cart-page { padding: 30px; }
+.cart-item { display: flex; align-items: center; gap: 20px; border-bottom: 1px solid #ddd; padding: 15px 0; }
+.cart-item img { width: 80px; height: 80px; object-fit: cover; }
+.cart-total { font-size: 22px; font-weight: bold; margin: 20px 0; color: #2d6a4f; }
