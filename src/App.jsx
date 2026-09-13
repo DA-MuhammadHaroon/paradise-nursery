@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProductList from './ProductList';
@@ -7,8 +7,13 @@ import AboutUs from './AboutUs';
 import './App.css';
 
 function App() {
+  const [showProductList, setShowProductList] = useState(false);
   const cartItems = useSelector((state) => state.cart.items);
   const totalCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+
+  const handleGetStartedClick = () => {
+    setShowProductList(true);
+  };
 
   return (
     <Router>
@@ -23,9 +28,11 @@ function App() {
       <Routes>
         <Route path="/" element={
           <div className="landing">
-            <h1>Paradise Nursery</h1>
+            <h1>Welcome To Paradise Nursery</h1>
             <p>Bring nature home with our beautiful houseplants.</p>
-            <Link to="/plants"><button>Get Started</button></Link>
+            <Link to="/plants">
+              <button onClick={handleGetStartedClick}>Get Started</button>
+            </Link>
           </div>
         } />
         <Route path="/plants" element={<ProductList />} />
